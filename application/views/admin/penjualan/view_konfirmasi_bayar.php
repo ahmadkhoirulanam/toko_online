@@ -1,0 +1,61 @@
+       <div class="row bg-title">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Pesanan</h4> </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">  
+                        <ol class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                            <li>Toko</li>
+				<li class="active">Konfirmasi Pembayaran</li>
+                        </ol>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+				
+		 
+		 
+		  <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+						
+			<h3 class="box-title m-b-0">Detail Data Konfirmasi Pembayaran Masuk</h3><br/>
+		   
+		    
+                 
+                          <div class='col-md-12'>
+                            <table id="example1" class='table table-hover table-condensed'>
+                              <thead>
+                                <tr>
+                                  <th style="width: 5%">No</th>
+                                  <th>Kode Transaksi</th>
+                                  <th>Total Transfer</th>
+                                  <th>Dari Rekening</th>
+                                  <th>Ke Rekening</th>
+                                  <th>Waktu Transfer</th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <?php 
+                                  $no = 1;
+                                  foreach ($record->result_array() as $row){
+                                  if ($row['proses']=='0'){ $proses = '<i class="text-danger">Pending</i>'; }elseif($row['proses']=='1'){ $proses = '<i class="text-warning">Proses</i>'; }elseif($row['proses']=='2'){ $proses = '<i class="text-info">Konfirmasi</i>'; }else{ $proses = '<i class="text-success">Dikirim </i>'; }
+                                  echo "<tr><td>$no</td>
+                                            <td><a href='".base_url()."administrator/tracking/$row[kode_transaksi]'>$row[kode_transaksi]</a></td>
+                                            <td style='color:red;'>$row[total_transfer]</td>
+                                            <td>$row[nama_pengirim]</td>
+                                            <td>$row[nama_bank]</td>
+                                            <td>".tgl_indo($row['tanggal_transfer'])."</td>
+                                            <td width='50px'><a class='btn btn-info btn-xs' title='Detail data pesanan' href='".base_url()."administrator/tracking/$row[kode_transaksi]'><span class='glyphicon glyphicon-search'></span></a></td>
+                                         </tr>";
+                                    $no++;
+                                  }
+                                ?>
+                              </tbody>
+                            </table>
+                          </div>
+                
+				
+				   </div>
+				      </div>
+					     </div>

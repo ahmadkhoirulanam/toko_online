@@ -19,8 +19,9 @@
 			 <li><a href="<?= base_url('admin/retur') ?>" class="waves-effect"><i class="icon icon-star" <i data-icon=")"></i> <span class="hide-menu"> Retur   </span></a> 
                     </li>
                    
-				   
-			<li><a href="#" class="waves-effect <?php if($this->uri->Segment(2)=="website" 
+					<li><a href="<?= base_url('admin/supplier') ?>" class="waves-effect"><i class="icon icon-list" <i data-icon=")"></i> <span class="hide-menu"> Supplyer   </span></a> 
+                    </li> 
+			<!-- <li><a href="#" class="waves-effect <?php if($this->uri->Segment(2)=="website" 
 			or $this->uri->Segment(2)=="pembelian"
 			or $this->uri->Segment(2)=="supplier"  ) { echo "active"; } ?>" ><i data-icon=")" class="icon icon-heart"></i> <span class="hide-menu">Pembelian <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
@@ -30,7 +31,7 @@
 				  
                         </ul>
                     </li>
-					
+					 -->
 					
 			 
 					
@@ -62,7 +63,7 @@
 				?>"><i data-icon=")" class="fa fa-book"></i> <span class="hide-menu">Laporan <span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                            
-				<li><a href="<?= base_url('admin/laporan') ?>">Lap. Penjualan</a></li>
+				<!-- <li><a href="<?= base_url('admin/laporan') ?>">Lap. Penjualan</a></li> -->
 				<li><a href="<?= base_url('admin/stok') ?>">Lap. Stok</a></li> 
                             
                         </ul>
